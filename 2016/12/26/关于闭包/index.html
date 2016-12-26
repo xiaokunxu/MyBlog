@@ -26,7 +26,7 @@
 <meta property="og:description" content="一、变量的作用域要理解闭包就必须要先理解变量的作用域；而变量的作用域就包含全局变量和局部变量。
 1.全局变量：拥有全局作用域，在任何地方都是有定义的，函数内部可以直接读取全局变量：12345var num = 10; //声明一个全局变量function fn()&amp;#123;  console.log(a); &amp;#125;fn(); // =&amp;gt; &amp;quot;10&amp;quot;
 2.局部变量：在">
-<meta property="og:updated_time" content="2016-12-26T09:47:17.000Z">
+<meta property="og:updated_time" content="2016-12-26T10:15:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于闭包 | 徐小坤">
 <meta name="twitter:description" content="一、变量的作用域要理解闭包就必须要先理解变量的作用域；而变量的作用域就包含全局变量和局部变量。
@@ -238,7 +238,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="一、变量的作用域"><a href="#一、变量的作用域" class="headerlink" title="一、变量的作用域"></a>一、变量的作用域</h4><p>要理解闭包就必须要先理解变量的作用域；而变量的作用域就包含<code>全局变量</code>和<code>局部变量</code>。</p>
+    <h4 id="一、变量的作用域"><a href="#一、变量的作用域" class="headerlink" title="一、变量的作用域"></a>一、变量的作用域</h4><p>要理解闭包就必须要先理解变量的作用域；而变量的作用域就包含<strong><code>全局变量</code></strong>和<strong><code>局部变量</code></strong>。</p>
 <p>1.全局变量：拥有全局作用域，在任何地方都是有定义的，函数内部可以直接读取全局变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var num = 10; //声明一个全局变量</div><div class="line">function fn()&#123;</div><div class="line">  console.log(a); </div><div class="line">&#125;</div><div class="line">fn(); // =&gt; &quot;10&quot;</div></pre></td></tr></table></figure></p>
 <p>2.局部变量：在函数体内声明的变量只在函数体内有定义，它们就是局部变量，作用域是局部性的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var num = 10; //声明一个全局变量</div><div class="line">function fn()&#123;</div><div class="line">  var num = 20; //声明一个同名的局部变量</div><div class="line">  return num; </div><div class="line">&#125;</div><div class="line">fn(); // =&gt; &quot;20&quot;</div></pre></td></tr></table></figure></p>
 <p>函数外部是无读取函数内的局部变量的</p>
