@@ -25,8 +25,8 @@ AJAX 请求不能发送。
 
 同源
 
-同协议：如相同http协议
-同域名：如都是xiaokunxu.">
+同协议：如都是http或者https
+同域名：如都是xiaok">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同源策略与跨域 | 徐小坤">
 <meta property="og:url" content="http://yoursite.com/2016/12/27/同源策略与跨域/index.html">
@@ -40,14 +40,14 @@ AJAX 请求不能发送。
 
 同源
 
-同协议：如相同http协议
-同域名：如都是xiaokunxu.">
+同协议：如都是http或者https
+同域名：如都是xiaok">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-c4b8df0856f0f152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-ae4f674df9e4a156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-15d9d7e633ed68a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-fd776fe3d8b5adc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2016-12-27T07:20:30.000Z">
+<meta property="og:updated_time" content="2016-12-27T09:00:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源策略与跨域 | 徐小坤">
 <meta name="twitter:description" content="一、什么是同源策略同源是指同协议、同域名、同端口号，可以通过location.origin来查看一个完整的源，同源策略的目的是为了保证用户信息的安全，防止恶意的网站窃取数据。不同源有以下三种行为受到限制：
@@ -59,8 +59,8 @@ AJAX 请求不能发送。
 
 同源
 
-同协议：如相同http协议
-同域名：如都是xiaokunxu.">
+同协议：如都是http或者https
+同域名：如都是xiaok">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
     
@@ -277,9 +277,9 @@ classes that you can use:
 <blockquote>
 <p>同源</p>
 <ul>
-<li>同协议：如相同http协议</li>
+<li>同协议：如都是http或者https</li>
 <li>同域名：如都是xiaokunxu.com/works/requirejs/requirejs.html和xiaokunxu.com/works/form/form.html</li>
-<li>同端口号：如都是80端口</li>
+<li>同端口号：如都是80端口<br>如：<br><a href="http://xiaokunxu.com/works/requirejs/requirejs.html和https://xiaokunxu.com/works/form/form.html（同源）" target="_blank" rel="external">http://xiaokunxu.com/works/requirejs/requirejs.html和https://xiaokunxu.com/works/form/form.html（同源）</a></li>
 </ul>
 </blockquote>
 <h4 id="二、什么是跨域"><a href="#二、什么是跨域" class="headerlink" title="二、什么是跨域"></a>二、什么是跨域</h4><p>所谓的跨域，指的就是就是突破同源策略的限制，从一个域名的网页去请求另一个域名的资源。</p>
@@ -297,10 +297,11 @@ classes that you can use:
 <p>原理<br>通过script标签加载数据的方式去获取其他源的数据，然后当做js代码来执行；<br>你需要提前在文档中声明一个回调函数，该函数的函数名通过GET的方式向后台传参，后台解析到函数名后在原始数据上padding这个函数名，然后在发给前端，最终这个返回前端的字符串将作为js的一部分执行</p>
 </blockquote>
 <p>2.CORS<br>CORS是一个W3C标准，即Cross-origin resource sharing，全称是”跨域资源共享”。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制，但CORS需要浏览器和服务器同时支持。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="兼容性"></p>
+<p>CORS的兼容性<br><img src="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="兼容性"></p>
 <blockquote>
 <p>原理<br>使用自定义的HTTP头部允许浏览器和服务器相互了解对方，从而决定请求或响应成功与否；<br>浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息——origin字段，告诉跨域的后台这次跨域请求是由哪个源；<br>实现CORS通信的关键是服务器，只要服务器实现好了CORS接口，就可以实现跨源通信。</p>
 </blockquote>
+<hr>
 <h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><p>找到hosts文件，修改hosts文件，在同一个IP下绑定a.xxk.com和b.xxk.com两个域名。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2321415-c4b8df0856f0f152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="绑定域名"></p>
 <ul>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      对象与原型 | 徐小坤 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="xxk">
+    
+    
+
+    <meta name="description" content="OOPObject-oriented programming的缩写，即面向对象程序设计，其中两个最重要的概念就是类和对象。类只是具备了某些功能和属性的抽象模型，而实际应用中需要一个一个实体，也就是需要对类进行实例化，类在实例化之后就是对象。
+特性：（1）继承性：子类自动继承其父级类中的属性和方法，并可以添加新的属性和方法或者对部分属性和方法进行重写。继承增加了代码的可重用性。（2）多态性：子类继承">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象与原型 | 徐小坤">
+<meta property="og:url" content="http://yoursite.com/2016/12/27/对象与原型/index.html">
+<meta property="og:site_name" content="徐小坤">
+<meta property="og:description" content="OOPObject-oriented programming的缩写，即面向对象程序设计，其中两个最重要的概念就是类和对象。类只是具备了某些功能和属性的抽象模型，而实际应用中需要一个一个实体，也就是需要对类进行实例化，类在实例化之后就是对象。
+特性：（1）继承性：子类自动继承其父级类中的属性和方法，并可以添加新的属性和方法或者对部分属性和方法进行重写。继承增加了代码的可重用性。（2）多态性：子类继承">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-658ded95ee144657.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-12-27T08:03:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对象与原型 | 徐小坤">
+<meta name="twitter:description" content="OOPObject-oriented programming的缩写，即面向对象程序设计，其中两个最重要的概念就是类和对象。类只是具备了某些功能和属性的抽象模型，而实际应用中需要一个一个实体，也就是需要对类进行实例化，类在实例化之后就是对象。
+特性：（1）继承性：子类自动继承其父级类中的属性和方法，并可以添加新的属性和方法或者对部分属性和方法进行重写。继承增加了代码的可重用性。（2）多态性：子类继承">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2321415-658ded95ee144657.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">徐小坤</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          欢迎来到我的个人站
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/someus" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+
+
+      <!-- <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li> -->
+
+      <!-- <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li> -->
+
+      <!-- <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-wechat'></i>
+          <span class="label">Wechat</span>
+        </a>
+      </li> -->
+
+
+
+
+
+  </ul>
+</nav>
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">对象与原型</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-27" class="post-meta__date date">2016-12-27</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/前端/">前端</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/JavaScript/">JavaScript</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h4 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h4><p>Object-oriented programming的缩写，即面向对象程序设计，其中两个最重要的概念就是类和对象。类只是具备了某些功能和属性的抽象模型，而实际应用中需要一个一个实体，也就是需要对类进行实例化，类在实例化之后就是对象。</p>
+<p>特性：<br>（1）继承性：子类自动继承其父级类中的属性和方法，并可以添加新的属性和方法或者对部分属性和方法进行重写。继承增加了代码的可重用性。<br>（2）多态性：子类继承了来自父级类中的属性和方法，并对其中部分方法进行重写。<br>（3）封装性：将一个类的使用和实现分开，只保留部分接口和方法与外部联系。</p>
+<p>如何通过构造函数的方式创建一个拥有属性和方法的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function People(name, age)&#123;</div><div class="line">  this.name = name;</div><div class="line">  this.age = age;</div><div class="line">&#125;</div><div class="line">People.prototype.sayName = function()&#123;</div><div class="line">  console.log(this.name)</div><div class="line">&#125;</div><div class="line">var p1 = new People(&apos;hello&apos;, &apos;20&apos;);</div><div class="line">p1.sayName();//hello</div></pre></td></tr></table></figure></p>
+<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。</p>
+<p>画图示意<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function People (name)&#123; </div><div class="line">  this.name = name; </div><div class="line">  this.sayName = function()&#123; </div><div class="line">  console.log(&apos;my name is:&apos; + this.name); </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">People.prototype.walk = function()&#123; </div><div class="line">  console.log(this.name + &apos; is walking&apos;); </div><div class="line">  &#125;</div><div class="line">var p1 = new People(&apos;你好&apos;);</div><div class="line">var p2 = new People(&apos;前端&apos;);</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2321415-658ded95ee144657.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="原型图"></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Car()&#123;</div><div class="line">  this.name = &apos;BMW&apos;;</div><div class="line">  this.color = &apos;red&apos;;</div><div class="line">  this.status = &apos;static&apos;;</div><div class="line">&#125;</div><div class="line">Car.prototype.run = function()&#123;</div><div class="line">  console.log(this.name + &apos; is running&apos;);</div><div class="line">&#125;</div><div class="line">Car.prototype.stop = function()&#123;</div><div class="line">  console.log(this.name + &apos; is stop&apos;);</div><div class="line">&#125;</div><div class="line">Car.prototype.getStatus = function()&#123;</div><div class="line">  console.log(this.status);</div><div class="line">&#125;</div><div class="line">var newCar = new Car();</div><div class="line">newCar.run();</div><div class="line">newCar.stop();</div><div class="line">newCar.getStatus();</div></pre></td></tr></table></figure>
+
+  </section>
+
+  
+  
+
+<section class="post-comments">
+
+    <div class="ds-thread" data-thread-key="2016/12/27/对象与原型/"></div>
+
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"xiaokunxu"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script> 
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">Copyright © 徐小坤 | 2016 Theme by xxk</span>
+
+</footer>
+
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
