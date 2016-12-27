@@ -16,13 +16,52 @@
     
     
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="一、什么是同源策略同源是指同协议、同域名、同端口号，可以通过location.origin来查看一个完整的源，同源策略的目的是为了保证用户信息的安全，防止恶意的网站窃取数据。不同源有以下三种行为受到限制：
+
+Cookie、LocalStorage 和 IndexDB 无法读取。
+DOM 无法获得。
+AJAX 请求不能发送。
+
+
+同源
+
+同协议：如相同http协议
+同域名：如都是xiaokunxu.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="同源策略与跨域 | 徐小坤">
 <meta property="og:url" content="http://yoursite.com/2016/12/27/同源策略与跨域/index.html">
 <meta property="og:site_name" content="徐小坤">
-<meta property="og:updated_time" content="2016-12-27T03:37:42.000Z">
+<meta property="og:description" content="一、什么是同源策略同源是指同协议、同域名、同端口号，可以通过location.origin来查看一个完整的源，同源策略的目的是为了保证用户信息的安全，防止恶意的网站窃取数据。不同源有以下三种行为受到限制：
+
+Cookie、LocalStorage 和 IndexDB 无法读取。
+DOM 无法获得。
+AJAX 请求不能发送。
+
+
+同源
+
+同协议：如相同http协议
+同域名：如都是xiaokunxu.">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-c4b8df0856f0f152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-ae4f674df9e4a156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-15d9d7e633ed68a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2321415-fd776fe3d8b5adc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2016-12-27T07:20:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源策略与跨域 | 徐小坤">
+<meta name="twitter:description" content="一、什么是同源策略同源是指同协议、同域名、同端口号，可以通过location.origin来查看一个完整的源，同源策略的目的是为了保证用户信息的安全，防止恶意的网站窃取数据。不同源有以下三种行为受到限制：
+
+Cookie、LocalStorage 和 IndexDB 无法读取。
+DOM 无法获得。
+AJAX 请求不能发送。
+
+
+同源
+
+同协议：如相同http协议
+同域名：如都是xiaokunxu.">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
     
     
@@ -210,14 +249,14 @@ classes that you can use:
           
             <font class="categories">
             &#8226; 分类:
-            <a class="categories-link" href="/categories/前端/">前端</a>, <a class="categories-link" href="/categories/前端/后端/">后端</a>, <a class="categories-link" href="/categories/前端/后端/设计/">设计</a>, <a class="categories-link" href="/categories/前端/后端/设计/其他/">其他</a>
+            <a class="categories-link" href="/categories/前端/">前端</a>
             </font>
           
 
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/AJAX/">AJAX</a>, <a class="tags-link" href="/tags/CSS/">CSS</a>, <a class="tags-link" href="/tags/HTML/">HTML</a>, <a class="tags-link" href="/tags/HTTP/">HTTP</a>, <a class="tags-link" href="/tags/JavaScript/">JavaScript</a>, <a class="tags-link" href="/tags/jQuery/">jQuery</a>, <a class="tags-link" href="/tags/摄影/">摄影</a>, <a class="tags-link" href="/tags/旅行/">旅行</a>, <a class="tags-link" href="/tags/生活/">生活</a>, <a class="tags-link" href="/tags/设计/">设计</a>
+              <a class="tags-link" href="/tags/JavaScript/">JavaScript</a>
             </font>
           
 
@@ -229,7 +268,61 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    
+    <h4 id="一、什么是同源策略"><a href="#一、什么是同源策略" class="headerlink" title="一、什么是同源策略"></a>一、什么是同源策略</h4><p>同源是指同协议、同域名、同端口号，可以通过location.origin来查看一个完整的源，同源策略的目的是为了保证用户信息的安全，防止恶意的网站窃取数据。不同源有以下三种行为受到限制：</p>
+<ul>
+<li>Cookie、LocalStorage 和 IndexDB 无法读取。</li>
+<li>DOM 无法获得。</li>
+<li>AJAX 请求不能发送。</li>
+</ul>
+<blockquote>
+<p>同源</p>
+<ul>
+<li>同协议：如相同http协议</li>
+<li>同域名：如都是xiaokunxu.com/works/requirejs/requirejs.html和xiaokunxu.com/works/form/form.html</li>
+<li>同端口号：如都是80端口</li>
+</ul>
+</blockquote>
+<h4 id="二、什么是跨域"><a href="#二、什么是跨域" class="headerlink" title="二、什么是跨域"></a>二、什么是跨域</h4><p>所谓的跨域，指的就是就是突破同源策略的限制，从一个域名的网页去请求另一个域名的资源。</p>
+<p>实现跨域的形式：</p>
+<ul>
+<li>降域</li>
+<li>JSONP</li>
+<li>CORS</li>
+<li>TML5中的PostMessage方法</li>
+<li>通过hash方法</li>
+<li>通过window.name的方法</li>
+</ul>
+<p>这里主要讲解JSONP和CORS两种跨域方法<br>1.JSONP<br>JSONP的全称是JSON with Padding</p>
+<blockquote>
+<p>原理<br>通过script标签加载数据的方式去获取其他源的数据，然后当做js代码来执行；<br>你需要提前在文档中声明一个回调函数，该函数的函数名通过GET的方式向后台传参，后台解析到函数名后在原始数据上padding这个函数名，然后在发给前端，最终这个返回前端的字符串将作为js的一部分执行</p>
+</blockquote>
+<p>2.CORS<br>CORS是一个W3C标准，即Cross-origin resource sharing，全称是”跨域资源共享”。它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制，但CORS需要浏览器和服务器同时支持。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2321415-c824ca635b6f8f5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="兼容性"></p>
+<blockquote>
+<p>原理<br>使用自定义的HTTP头部允许浏览器和服务器相互了解对方，从而决定请求或响应成功与否；<br>浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息——origin字段，告诉跨域的后台这次跨域请求是由哪个源；<br>实现CORS通信的关键是服务器，只要服务器实现好了CORS接口，就可以实现跨源通信。</p>
+</blockquote>
+<h4 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h4><p>找到hosts文件，修改hosts文件，在同一个IP下绑定a.xxk.com和b.xxk.com两个域名。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2321415-c4b8df0856f0f152.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="绑定域名"></p>
+<ul>
+<li><p>a.xxk.com/task31/task31.html下的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    你好</div><div class="line">    &lt;script src=&quot;http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">      $.ajax(&#123;</div><div class="line">        url:&quot;//b.xxk.com/task31/task31.php&quot;,</div><div class="line">        type:&quot;get&quot;,</div><div class="line">        dataType:&quot;json&quot;,</div><div class="line">        success:function(data)&#123;</div><div class="line">          alert(data);</div><div class="line">        &#125;,</div><div class="line">        error:function()&#123;</div><div class="line">          alert(&quot;出错&quot;)</div><div class="line">        &#125;</div><div class="line">      &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>b.xxk.com/task31/task31.php下的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">$data=&quot;你好&quot;;</div><div class="line">echo json_encode($data);</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>演示结果<br><img src="http://upload-images.jianshu.io/upload_images/2321415-ae4f674df9e4a156.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行结果"></p>
+</li>
+</ul>
+<p>CORS方式解决跨域问题</p>
+<ul>
+<li>使用CORS，在task31.php中添加：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(&quot;Access-Control-Allow-Origin: http://a.xxk.com&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/2321415-15d9d7e633ed68a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="演示结果"></p>
+<p>使用JSONP解决跨域问题<br>a.xxk.com/task31/task31.html的内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    你好</div><div class="line">    &lt;script&gt;</div><div class="line">      window.fn = function(data)&#123;</div><div class="line">        alert(data);</div><div class="line">      &#125;</div><div class="line">      var script = document.createElement(&apos;script&apos;);</div><div class="line">      script.src = &quot;http://b.xxk.com/task31/task31.php?callback=fn&quot;;</div><div class="line">      document.body.appendChild(script);</div><div class="line">    &lt;/script&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>b.xxk.com下的task31.php：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fn(&quot;nihao&quot;)</div></pre></td></tr></table></figure></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2321415-fd776fe3d8b5adc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="演示结果"></p>
+
   </section>
 
   
