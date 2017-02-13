@@ -7,7 +7,7 @@
     
 
     <title>
-      HTML5离线缓存 | 徐小坤 
+      网站性能优化 | 徐小坤 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,37 +16,16 @@
     
     
 
-    <meta name="description" content="1、使用：（1）创建 manifest 文件``cache manifest
-version n.ncache:// 需要缓存的文件﻿​/css/style.css/images/image.jpg
-network:// 每次重新拉取的文件
-
-（除了以上的所有文件）
-
-fallback:// 离线状况下代替的文件/offline.html`` 
-（2）在 HTML 页面中引用 manifest 文">
+    <meta name="description" content="1. content方面（1）减少HTTP请求：合并文件、CSS精灵、inline Image﻿（2）减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询（3）避免重定向：多余的中间访问（4）使Ajax可缓存（5）非必须组件延迟加载（6）未来所需组件预加载（7）减少DOM元素数量（8）将资源放到不同的域下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5离线缓存 | 徐小坤">
-<meta property="og:url" content="http://yoursite.com/2017/02/13/HTML5离线缓存/index.html">
+<meta property="og:title" content="网站性能优化 | 徐小坤">
+<meta property="og:url" content="http://yoursite.com/2017/02/14/网站性能优化/index.html">
 <meta property="og:site_name" content="徐小坤">
-<meta property="og:description" content="1、使用：（1）创建 manifest 文件``cache manifest
-version n.ncache:// 需要缓存的文件﻿​/css/style.css/images/image.jpg
-network:// 每次重新拉取的文件
-
-（除了以上的所有文件）
-
-fallback:// 离线状况下代替的文件/offline.html`` 
-（2）在 HTML 页面中引用 manifest 文">
-<meta property="og:updated_time" content="2017-02-13T15:01:46.000Z">
+<meta property="og:description" content="1. content方面（1）减少HTTP请求：合并文件、CSS精灵、inline Image﻿（2）减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询（3）避免重定向：多余的中间访问（4）使Ajax可缓存（5）非必须组件延迟加载（6）未来所需组件预加载（7）减少DOM元素数量（8）将资源放到不同的域下：">
+<meta property="og:updated_time" content="2017-02-13T16:37:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5离线缓存 | 徐小坤">
-<meta name="twitter:description" content="1、使用：（1）创建 manifest 文件``cache manifest
-version n.ncache:// 需要缓存的文件﻿​/css/style.css/images/image.jpg
-network:// 每次重新拉取的文件
-
-（除了以上的所有文件）
-
-fallback:// 离线状况下代替的文件/offline.html`` 
-（2）在 HTML 页面中引用 manifest 文">
+<meta name="twitter:title" content="网站性能优化 | 徐小坤">
+<meta name="twitter:description" content="1. content方面（1）减少HTTP请求：合并文件、CSS精灵、inline Image﻿（2）减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询（3）避免重定向：多余的中间访问（4）使Ajax可缓存（5）非必须组件延迟加载（6）未来所需组件预加载（7）减少DOM元素数量（8）将资源放到不同的域下：">
     
     
     
@@ -222,12 +201,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">HTML5离线缓存</h1>
+    <h1 class="post-title">网站性能优化</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2017-02-13" class="post-meta__date date">2017-02-13</time> 
+      <time datetime="2017-02-14" class="post-meta__date date">2017-02-14</time> 
 
       <span class="post-meta__tags tags">
 
@@ -241,7 +220,7 @@ classes that you can use:
           
              &#8226; 标签:
             <font class="tags">
-              <a class="tags-link" href="/tags/HTML/">HTML</a>
+              <a class="tags-link" href="/tags/性能优化/">性能优化</a>
             </font>
           
 
@@ -253,19 +232,13 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="1、使用："><a href="#1、使用：" class="headerlink" title="1、使用："></a>1、使用：</h4><p>（1）创建 manifest 文件<br>``<br>cache manifest</p>
-<h1 id="version-n-n"><a href="#version-n-n" class="headerlink" title="version n.n"></a>version n.n</h1><p>cache:<br>// 需要缓存的文件﻿​<br>/css/style.css<br>/images/image.jpg</p>
-<p>network:<br>// 每次重新拉取的文件</p>
-<ul>
-<li>（除了以上的所有文件）</li>
-</ul>
-<p>fallback:<br>// 离线状况下代替的文件<br>/offline.html<br>`` </p>
-<p>（2）在 HTML 页面中引用 manifest 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;htmlmanifest=&quot;sample.appcache&quot;&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  //todo</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  //todo</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>（3）在服务器添加 mime-type text/cache-manifest</p>
-<p>（4）如何更新：如果有修改资源文件，必须通过修改manifest文件来刷新被缓存的文件列表。</p>
-<h4 id="2、优势："><a href="#2、优势：" class="headerlink" title="2、优势："></a>2、优势：</h4><p>（1）完全离线<br>（2）资源被缓存，加载更快<br>（3）降低 server 负载</p>
-<h4 id="3、缺陷："><a href="#3、缺陷：" class="headerlink" title="3、缺陷："></a>3、缺陷：</h4><p>（1）含有 manifest 属性的当前请求页无论如何都会被缓存<br>（2）更新需要建立在manifest文件的更新，文件更新后是需要页面再次刷新的（需要2次刷新才能获取新资源）<br>（3）更新全局性的，无法单独更新某个文件（无法单点更新）<br>（4）对于链接的参数变化是敏感的，任何一个参数的修改都会被（master）重新缓存（重复缓存含参页面）index.html 和 index.html?renew=1 会被认为是不同文件，分别缓存。</p>
-<h4 id="4、使用场景"><a href="#4、使用场景" class="headerlink" title="4、使用场景"></a>4、使用场景</h4><p>（1）单地址的页面<br>（2）对实时性能要求不高的业务 （修改不频繁）<br>（3）离线 webapp  </p>
+    <h4 id="1-content方面"><a href="#1-content方面" class="headerlink" title="1. content方面"></a>1. content方面</h4><p>（1）减少HTTP请求：合并文件、CSS精灵、inline Image<br>﻿（2）减少DNS查询：DNS查询完成之前浏览器不能从这个主机下载任何任何文件。方法：DNS缓存、将资源分布到恰当数量的主机名，平衡并行下载和DNS查询<br>（3）避免重定向：多余的中间访问<br>（4）使Ajax可缓存<br>（5）非必须组件延迟加载<br>（6）未来所需组件预加载<br>（7）减少DOM元素数量<br>（8）将资源放到不同的域下：浏览器同时从一个域下载资源的数目有限，增加域可以提高并行下载量<br>（9）减少iframe数量<br>（10）不要404</p>
+<h4 id="2-Server方面"><a href="#2-Server方面" class="headerlink" title="2. Server方面"></a>2. Server方面</h4><p>（1）使用CDN<br>（2）添加Expires或者Cache-Control响应头<br>（3）对组件使用Gzip压缩<br>（4）配置ETag<br>（5）Flush Buffer Early<br>（6）Ajax使用GET进行请求<br>（7）避免空src的img标签</p>
+<h4 id="3-Cookie方面"><a href="#3-Cookie方面" class="headerlink" title="3. Cookie方面"></a>3. Cookie方面</h4><p>（1）减小cookie大小<br>（2）引入资源的域名不要包含cookie</p>
+<h4 id="4-css方面"><a href="#4-css方面" class="headerlink" title="4. css方面"></a>4. css方面</h4><p>（1）将样式表放到页面顶部<br>（2）不使用CSS表达式<br>（3）使用<link>不使用@import<br>（4）不使用IE的Filter</p>
+<h4 id="5-Javascript方面"><a href="#5-Javascript方面" class="headerlink" title="5. Javascript方面"></a>5. Javascript方面</h4><p>（1）将脚本放到页面底部<br>（2）将javascript和css从外部引入<br>（3）压缩javascript和css<br>（4）删除不需要的脚本<br>（5）减少DOM访问<br>（6）合理设计事件监听器</p>
+<h4 id="6-图片方面"><a href="#6-图片方面" class="headerlink" title="6. 图片方面"></a>6. 图片方面</h4><p>（1）优化图片：根据实际颜色需要选择色深、压缩<br>（2）优化css精灵<br>（3）不要在HTML中拉伸图片<br>（4）保证favicon.ico小并且可缓存</p>
+<h4 id="7-移动方面"><a href="#7-移动方面" class="headerlink" title="7. 移动方面"></a>7. 移动方面</h4><p>（1）尽量使用css3动画，开启硬件加速。<br>（2）适当使用touch事件代替click事件。<br>（3）避免使用css3渐变阴影效果。<br>（4）可以用transform: translateZ(0)来开启硬件加速。<br>（5）不滥用Float。Float在渲染时计算量比较大，尽量减少使用<br>（6）不滥用Web字体。Web字体需要下载，解析，重绘当前页面，尽量减少使用。<br>（7）合理使用requestAnimationFrame动画代替setTimeout<br>（8）CSS中的属性（CSS3 transitions、CSS3 3D transforms、Opacity、Canvas、WebGL、Video）会触发GPU渲染，请合理使用。过渡使用会引发手机过耗电增加</p>
 
   </section>
 
@@ -274,7 +247,7 @@ classes that you can use:
 
 <section class="post-comments">
 
-    <div class="ds-thread" data-thread-key="2017/02/13/HTML5离线缓存/"></div>
+    <div class="ds-thread" data-thread-key="2017/02/14/网站性能优化/"></div>
 
     <script type="text/javascript">
       var duoshuoQuery = {short_name:"xiaokunxu"};

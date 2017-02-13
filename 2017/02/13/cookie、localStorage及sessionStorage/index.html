@@ -16,16 +16,16 @@
     
     
 
-    <meta name="description" content="1.cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
+    <meta name="description" content="一、cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cookie、localStorage及sessionStorage | 徐小坤">
 <meta property="og:url" content="http://yoursite.com/2017/02/13/cookie、localStorage及sessionStorage/index.html">
 <meta property="og:site_name" content="徐小坤">
-<meta property="og:description" content="1.cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
-<meta property="og:updated_time" content="2017-02-13T10:41:33.000Z">
+<meta property="og:description" content="一、cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
+<meta property="og:updated_time" content="2017-02-13T15:08:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cookie、localStorage及sessionStorage | 徐小坤">
-<meta name="twitter:description" content="1.cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
+<meta name="twitter:description" content="一、cookie（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。（2）通过读写 cookie 检测是否支持（3）cookie 属性有名，值，max-age，path, domain，secure；（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=s">
     
     
     
@@ -232,16 +232,16 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>1.cookie<br>（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。<br>（2）通过读写 cookie 检测是否支持<br>（3）cookie 属性有名，值，max-age，path, domain，secure；<br>（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=seconds 属性告诉浏览器 cookie 有效期<br>（5）cookie作用域通过文档源和文档路径来确定，通过 path 和 domain 进行配置，web页面同目录或子目录文档都可访问<br>（6）通过cookie保存数据的方法为：为document.cookie 设置一个符合目标的字符串如下<br>（7）读取 document.cookie 获得’; ‘分隔的字符串，key=value,解析得到结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">document.cookie = &apos;name=qiu; max-age=9999; path=/; domain=domain; secure&apos;;</div><div class="line">document.cookie = &apos;name=aaa; path=/; domain=domain; secure&apos;; </div><div class="line">  // 要改变cookie的值，需要使用相同的名字、路径和域，新的值 </div><div class="line">  // 来设置cookie，同样的方法可以用来改变有效期</div><div class="line">  // 设置max-age为0可以删除指定cookie</div><div class="line">  //读取cookie，访问document.</div><div class="line">cookie返回键值对组成的字符串， //不同键值对之间用&apos;; &apos;分隔。通过解析获得需要的值 `</div></pre></td></tr></table></figure></p>
-<p>2.localStorage和sessionStorage<br>（1）使用方法<br>在使用之前首先需要判断浏览器是否支持localStorage和sessionStorage属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if(！window.localStorage)&#123;</div><div class="line">  alert(&quot;浏览器支持localstorage&quot;);</div><div class="line">    return false;</div><div class="line">  &#125;else&#123;</div><div class="line">    //主逻辑业务</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+    <h4 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h4><p>（1）cookie 是web浏览器存储的少量数据，最早设计为服务器端使用，作为HTTP协议的扩展实现。cookie 数据会自动在浏览器和服务器之间传输。<br>（2）通过读写 cookie 检测是否支持<br>（3）cookie 属性有名，值，max-age，path, domain，secure；<br>（4）cookie默认有效期为浏览器会话，一旦用户关闭浏览器，数据就丢失，通过设置max-age=seconds 属性告诉浏览器 cookie 有效期<br>（5）cookie作用域通过文档源和文档路径来确定，通过path和domain进行配置，web页面同目录或子目录文档都可访问<br>（6）通过cookie保存数据的方法为：为document.cookie 设置一个符合目标的字符串如下<br>（7）读取 document.cookie 获得’; ‘分隔的字符串，key=value,解析得到结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">document.cookie = &apos;name=qiu; max-age=9999; path=/; domain=domain; secure&apos;;</div><div class="line">document.cookie = &apos;name=aaa; path=/; domain=domain; secure&apos;; </div><div class="line">  // 要改变cookie的值，需要使用相同的名字、路径和域，新的值 </div><div class="line">  // 来设置cookie，同样的方法可以用来改变有效期</div><div class="line">  // 设置max-age为0可以删除指定cookie</div><div class="line">  //读取cookie，访问document.</div><div class="line">cookie返回键值对组成的字符串， //不同键值对之间用&apos;; &apos;分隔。通过解析获得需要的值 `</div></pre></td></tr></table></figure></p>
+<h4 id="二、localStorage和sessionStorage"><a href="#二、localStorage和sessionStorage" class="headerlink" title="二、localStorage和sessionStorage"></a>二、localStorage和sessionStorage</h4><p>（1）使用方法<br>在使用之前首先需要判断浏览器是否支持localStorage和sessionStorage属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if(！window.localStorage)&#123;</div><div class="line">  alert(&quot;浏览器支持localstorage&quot;);</div><div class="line">    return false;</div><div class="line">  &#125;else&#123;</div><div class="line">    //主逻辑业务</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <ul>
 <li><p>存储：localStorage.setItem(key,value)如果key存在时，更新value</p>
 </li>
-<li><p>获取：localStorage.getItem(key)<br>如果key不存在返回null</p>
+<li><p>获取：localStorage.getItem(key)如果key不存在返回null</p>
 </li>
-<li><p>删除：localStorage.removeItem(key)<br>一旦删除，key对应的数据将会全部删除</p>
+<li><p>删除：localStorage.removeItem(key)一旦删除，key对应的数据将会全部删除</p>
 </li>
-<li><p>全部清除：localStorage.clear()<br>某些时候使用removeItem逐个删除太麻烦，可以使用 clear,执行的后果是会清除所有 localStorage 对象保存的数据</p>
+<li><p>全部清除：localStorage.clear()<br>某些时候使用removeItem逐个删除太麻烦，可以使用clear,执行的后果是会清除所有localStorage 对象保存的数据</p>
 </li>
 </ul>
 <p>（2）可以存什么：数组、json数据、图片、脚本以及样式文件</p>
@@ -259,23 +259,22 @@ classes that you can use:
 </ul>
 <p>（5）区别：</p>
 <ul>
-<li>localStorage 有效期为永久，sessionStorage<br>有效期为顶层窗口关闭前，sessionStorage 存储的数据在浏览器关闭后自动删除。</li>
+<li>localStorage有效期为永久，sessionStorage有效期为顶层窗口关闭前，sessionStorage 存储的数据在浏览器关闭后自动删除。</li>
 <li>同源文档可以读取并修改 localStorage 数据，sessionStorage 只允许同一个窗口下的文档访问，如通过 iframe 引入的同源文档。</li>
-<li>Storage 对象通常被当做普通 javascript 对象使用：通过设置属性来存取字符串值，也可以通过 setItem(key, value) 设置，getItem(key)<br>读取，removeItem(key) 删除，clear()删除所有数据，length表示已存储的数据项数目，key(index)返回对应索引的key。</li>
+<li>Storage对象通常被当做普通javascript对象使用：通过设置属性来存取字符串值，也可以通过 setItem(key, value) 设置，getItem(key)读取，removeItem(key)删除，clear()删除所有数据，length表示已存储的数据项数目，key(index)返回对应索引的key。</li>
 </ul>
-<p>3.localStorage,sessionStorage,cookie 区别</p>
-<ul>
+<h4 id="三、localStorage-sessionStorage-cookie-区别"><a href="#三、localStorage-sessionStorage-cookie-区别" class="headerlink" title="三、localStorage,sessionStorage,cookie 区别"></a>三、localStorage,sessionStorage,cookie 区别</h4><ul>
 <li>都会在浏览器端保存，有大小限制，同源限制。</li>
-<li>cookie 会在请求时发送到服务器，作为会话标识，服务器可修改 cookie；web storage 不会发送到服务器。</li>
-<li>cookie 有 path 概念，子路径可以访问父路径 。cookie，父路径不能访问子路径 cookie。</li>
-<li>有效期：cookie 在设置的有效期内有效，默认为浏览器关闭；sessionStorage 在窗口关闭前有效，localStorage 长期有效，直到用户删除。</li>
-<li>共享：sessionStorage 不能共享，localStorage 在同源文档之间共享，cookie 在同源且符合 path 规则的文档之间共享。</li>
-<li>localStorage 的修改会促发其他文档窗口的 update 事件。</li>
-<li>cookie 有 secure 属性要求 HTTPS 传输。</li>
-<li>浏览器不能保存超过300个 cookie，单个服务器不能超过20个，每个 cookie 不能超过4k。web storage 大小支持能达到5M。</li>
-<li>cookie 不是很安全，别人可以分析存放在本地的 cookie 并进行 cookie 欺骗，考虑到安全应当使用 session。</li>
-<li>session 会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用 cookie。</li>
-<li>所以个人建议：将登陆信息等重要信息存放为 session，其他信息如果需要保留，可以放在 cookie 中。</li>
+<li>cookie 会在请求时发送到服务器，作为会话标识，服务器可修改cookie；web storage 不会发送到服务器。</li>
+<li>cookie 有path概念，子路径可以访问父路径 。cookie，父路径不能访问子路径cookie。</li>
+<li>有效期：cookie 在设置的有效期内有效，默认为浏览器关闭；sessionStorage在窗口关闭前有效，localStorage 长期有效，直到用户删除。</li>
+<li>共享：sessionStorage不能共享，localStorage在同源文档之间共享，cookie在同源且符合path规则的文档之间共享。</li>
+<li>localStorage的修改会促发其他文档窗口的 update 事件。</li>
+<li>cookie有secure属性要求HTTPS传输。</li>
+<li>浏览器不能保存超过300个cookie，单个服务器不能超过20个，每个cookie不能超过4k。web storage大小支持能达到5M。</li>
+<li>cookie不是很安全，别人可以分析存放在本地的cookie并进行cookie欺骗，考虑到安全应当使用session。</li>
+<li>session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用cookie。</li>
+<li>所以个人建议：将登陆信息等重要信息存放为session，其他信息如果需要保留，可以放在cookie中。</li>
 </ul>
 
   </section>
