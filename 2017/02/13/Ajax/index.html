@@ -16,16 +16,28 @@
     
     
 
-    <meta name="description" content="一、Ajax 的定义二、Ajax 的实现原理三、创建 Ajax 的过程四、Ajax 的优点和缺点？">
+    <meta name="description" content="一、Ajax 的定义AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。数据通常以JSON的格式来进行传送，是一种创建快速动态网页的技术。它使用：
+
+使用XHTML+CSS来标准化呈现；
+使用XML和XSLT进行数据交换及相关操作；
+使用XMLHttpRequest对象与Web服务器进行异步数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax | 徐小坤">
 <meta property="og:url" content="http://yoursite.com/2017/02/13/Ajax/index.html">
 <meta property="og:site_name" content="徐小坤">
-<meta property="og:description" content="一、Ajax 的定义二、Ajax 的实现原理三、创建 Ajax 的过程四、Ajax 的优点和缺点？">
-<meta property="og:updated_time" content="2017-02-13T16:21:22.000Z">
+<meta property="og:description" content="一、Ajax 的定义AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。数据通常以JSON的格式来进行传送，是一种创建快速动态网页的技术。它使用：
+
+使用XHTML+CSS来标准化呈现；
+使用XML和XSLT进行数据交换及相关操作；
+使用XMLHttpRequest对象与Web服务器进行异步数">
+<meta property="og:updated_time" content="2017-02-14T06:22:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax | 徐小坤">
-<meta name="twitter:description" content="一、Ajax 的定义二、Ajax 的实现原理三、创建 Ajax 的过程四、Ajax 的优点和缺点？">
+<meta name="twitter:description" content="一、Ajax 的定义AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。数据通常以JSON的格式来进行传送，是一种创建快速动态网页的技术。它使用：
+
+使用XHTML+CSS来标准化呈现；
+使用XML和XSLT进行数据交换及相关操作；
+使用XMLHttpRequest对象与Web服务器进行异步数">
     
     
     
@@ -232,7 +244,47 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h4 id="一、Ajax-的定义"><a href="#一、Ajax-的定义" class="headerlink" title="一、Ajax 的定义"></a>一、Ajax 的定义</h4><h4 id="二、Ajax-的实现原理"><a href="#二、Ajax-的实现原理" class="headerlink" title="二、Ajax 的实现原理"></a>二、Ajax 的实现原理</h4><h4 id="三、创建-Ajax-的过程"><a href="#三、创建-Ajax-的过程" class="headerlink" title="三、创建 Ajax 的过程"></a>三、创建 Ajax 的过程</h4><h4 id="四、Ajax-的优点和缺点？"><a href="#四、Ajax-的优点和缺点？" class="headerlink" title="四、Ajax 的优点和缺点？"></a>四、Ajax 的优点和缺点？</h4>
+    <h4 id="一、Ajax-的定义"><a href="#一、Ajax-的定义" class="headerlink" title="一、Ajax 的定义"></a>一、Ajax 的定义</h4><p>AJAX全称为“Asynchronous JavaScript and XML”（异步JavaScript和XML），是一种创建交互式网页应用的网页开发技术。数据通常以JSON的格式来进行传送，是一种创建快速动态网页的技术。它使用：</p>
+<ol>
+<li>使用XHTML+CSS来标准化呈现；</li>
+<li>使用XML和XSLT进行数据交换及相关操作；</li>
+<li>使用XMLHttpRequest对象与Web服务器进行异步数据通信； </li>
+<li>使用Javascript操作Document Object Model进行动态显示及交互； </li>
+<li>使用JavaScript绑定和处理所有数据。 </li>
+</ol>
+<h4 id="二、Ajax-的实现原理及创建过程"><a href="#二、Ajax-的实现原理及创建过程" class="headerlink" title="二、Ajax 的实现原理及创建过程"></a>二、Ajax 的实现原理及创建过程</h4><ol>
+<li>首先，由客户端事件触发Ajax事件；</li>
+<li>创建XMLHttpRequest对象,也就是创建一个异步调用对象；</li>
+<li>创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息；</li>
+<li>设置响应HTTP请求状态变化的函数；</li>
+<li>发送HTTP请求；</li>
+<li>获取异步调用返回的数据；</li>
+<li>使用JavaScript和DOM实现局部刷新。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var xhr =null;//创建对象 </div><div class="line">if(window.XMLHttpRequest)&#123;</div><div class="line">  xhr = new XMLHttpRequest();</div><div class="line">&#125;else&#123;</div><div class="line">  xhr = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);</div><div class="line">&#125;</div><div class="line">xhr.open(“方式”,”地址”,”标志位”);//初始化请求 </div><div class="line">xhr.setRequestHeader(“”,””);//设置http头信息 </div><div class="line">xhr.onreadystatechange =function()&#123;&#125;//指定回调函数 </div><div class="line">xhr.send();//发送请求</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="三、Ajax-的优点和缺点？"><a href="#三、Ajax-的优点和缺点？" class="headerlink" title="三、Ajax 的优点和缺点？"></a>三、Ajax 的优点和缺点？</h4><ol>
+<li>优点：</li>
+</ol>
+<ul>
+<li>最大的一点是页面无刷新，用户的体验非常好。</li>
+<li>使用异步方式与服务器通信，具有更加迅速的响应能力。</li>
+<li>前端和后端负载平衡。</li>
+<li>基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</li>
+<li>界面与应用分离。</li>
+</ul>
+<ol>
+<li>缺点：</li>
+</ol>
+<ul>
+<li>ajax不支持浏览器back按钮。</li>
+<li>安全问题 AJAX暴露了与服务器交互的细节。</li>
+<li>对搜索引擎的支持比较弱。</li>
+<li>破坏了程序的异常机制。</li>
+<li>不容易调试。</li>
+</ul>
+<h4 id="四、下面是封装的一个-Ajax-函数："><a href="#四、下面是封装的一个-Ajax-函数：" class="headerlink" title="四、下面是封装的一个 Ajax 函数："></a>四、下面是封装的一个 Ajax 函数：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function ajax(objs)&#123;</div><div class="line">  var xhr = new XMLHttpRequest();</div><div class="line">  xhr.onreadystatechange = function()&#123;</div><div class="line">    if(xhr.readyState == 4 &amp;&amp; xhr.status == 200)&#123;</div><div class="line">      console.log(xhr.responseText);</div><div class="line">    &#125;</div><div class="line">    if(xhr.readyState == 4 &amp;&amp; xhr.status == 404)&#123;</div><div class="line">      console.log(&quot;Error!&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  var dataSens = &quot;&quot;;</div><div class="line">  for(var key in objs.data)&#123;</div><div class="line">  dataSend += key + &quot;=&quot; + objs.data[key] + &quot;&amp;&quot;;</div><div class="line">  &#125;</div><div class="line">  dataSend = dataSend.substr(0, dataSend.length - 1);</div><div class="line">  if(objs.type.toLowerCase() == &quot;get&quot;)&#123;</div><div class="line">  xhr.open(&quot;GET&quot;, objs.url + dataSend, false);</div><div class="line">  xhr.send();</div><div class="line">  &#125;</div><div class="line">  if(objs.type.toLowerCase() == &quot;post&quot;)&#123;</div><div class="line">  xhr.open(&quot;POST&quot;, objs.url, false);</div><div class="line">  xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-from-urlencoded&quot;);</div><div class="line">  xhr.send(dataSend);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相信大家都遇到过这样的一个场景，当我们点击按钮时，如果在短时间内重复点击的话，就会不断的向后台发出请求，从而结果就是执行完上一个请求后又将继续执行下一个请求直至点击最后的那个，这时候该如何在数据到来之前防止重复点击呢？<br>答案是通过设置状态锁的方法来防止重复点击，下面是代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var isLoading = false;</div><div class="line">btn.addEventListener(&apos;click&apos;, function()&#123;</div><div class="line">  if(isLoading)&#123;</div><div class="line">    return ;</div><div class="line">  &#125;else&#123;</div><div class="line">    isLoading = true;</div><div class="line">      // to do......</div><div class="line">    isLoading = false;</div><div class="line">  &#125;</div><div class="line">&#125;, false)</div></pre></td></tr></table></figure></p>
+
   </section>
 
   
